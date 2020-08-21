@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper]{article}
+% ^ review
+%#########################################################################
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+%\usepackage[babel=true,kerning=true]{microtype}%évite le problème des ":"
+\usepackage{lmodern}
+\usepackage[hmargin=4cm, vmargin=2cm, includeheadfoot]{geometry}
+\usepackage{alltt}
+%\usepackage{csvsimple}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{color}
+\usepackage{graphicx}
+
+\usepackage[francais,bloc,completemulti]{automultiplechoice}
+% ou bien
+%\usepackage[correcindiv,francais,bloc,completemulti]{automultiplechoice}
+
+% -> [completemulti] pour ajouter "Aucune de ces réponses n'est correcte"
+% -> [correcindiv] pour voir la solution
+
+%\usepackage[francais,bloc,ensemble,outsidebox,automarks]{automultiplechoice}
+
+%\usepackage{mhchem} % needed for chemical equations
+%\usepackage{tikz} % inutile a priori
+\usepackage{comment}
+
+% exemple de commande utilisateur
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+% #########################################################################
+% Entête
+%#########################################################################
+
+% \newcounter{cptexolabel}
+% \stepcounter{cptexolabel}
+% \newcommand{\exolabel}[1]{\vspace{1em}\par\noindent{\large\textbf{\underline{Exercice \thecptexolabel}} (#1)} \stepcounter{cptexolabel}\\}
+% \newcommand{\datepreuve}{15/04/2019}
+% \makeatletter
+% \newcommand{\numcopie}{\the\AMCid@etud}
+% \makeatother
+% \def\multiSymbole{}
+% \def\AMCbeginQuestion#1#2{\par\noindent{\bf Q#1:}#2}%\hspace*{1em}}
+% \def\AMCformQuestion#1{\vspace{\AMCformVSpace}\par{\bf Q#1:}}
+
+\newcommand{\ue}{WebX}
+
+\title{QCM \ue}
+\author{Equipe pédagogique de l'\ue}
+
+%#########################################################################
+% Document
+%#########################################################################
+\begin{document}
+
+\shorthandoff{:}%
+
+% BAREME 
+% e=incohérence; b=bonne; m=mauvaise; p planché (on ne descent pas en dessous)
+%% \baremeDefautM{formula=NBC/NB-NMC/NM,p=0}
+\baremeDefautM{e=-1,b=1,m=-1,p=0}
+\baremeDefautS{e=-1,b=1,m=0,p=0}
+%\baremeDefautS{e=-0.5,b=1,m=-0.5}% never put b<1,
+%\baremeDefautM{e=-0.5,b=1,m=-0.25,p=-0.5}% never put b<1, with amc2moodle m correspond to the grade if all the wrong answers are ticked, b correspond to the grade if all the good answers are ticked
+
+%question : environnement, text question
+%element{label}{groupe} :commande, encapsule la commande pour lui donner un groupe
+%reponses : environnement
+%bonne  : commande
+%mauvaise : commande
+
+% \begin{flushleft}
+% \end{flushleft}
+%\attachfile{./a.c}
+%\includesounds{./Son/piano2.mp3} % test pour inclure sons
+%\includegraphics[width=0.5\textwidth]{./Figures/other/schema_interpL.png}
+
+%==============================================================================
+\begin{comment} % TUTORIEL POUR L'EQUIPE PEDAGOGIQUE
+%==============================================================================
+
+% Objectif :
+% - theme1 % 5 questions (par exemple)
+% - theme2 % 5 questions
+% - theme3 % 5 questions
+% - theme4 % 5 questions
+
+% QUESTION A CHOIX MULTIPLE :
+\element{theme1}{
+  \begin{questionmult}{Nom-question:QCM}
+    SUJET...
+    \begin{reponses}
+      \bonne{REPONSE1}
+      \bonne{REPONSE2}
+      \mauvaise{AUTRES...}
+    \end{reponses}
+  \end{questionmult}
+}
+
+% QUESTION A CHOIX UNIQUE :
+\element{theme1}{
+  \begin{question}{Nom-question:QCU}
+    SUJET...
+    Cochez la bonne réponse (suggérer dans le sujet qu'il y a une
+    unique réponse) :
+    \begin{reponses}
+      \bonne{REPONSE}
+      \mauvaise{AUTRES...}
+    \end{reponses}
+  \end{question}
+}
+
+% Pour le verbatim, utiliser \texttt{ } ou bien le paquetage alltt.
+
+%==============================================================================
+\end{comment}
+%==============================================================================
+
+\element{theme1}{
+
+  \begin{questionmult}{Intro:QCM}
+    ENONCE1
+    \begin{reponses}
+      \bonne{OK1}
+      \bonne{OK2}
+      \mauvaise{KO}
+    \end{reponses}
+  \end{questionmult}
+
+  \begin{questionmult}{Test:QCM}
+    ENONCE2
+    \begin{reponses}
+      \bonne{OK}
+      \mauvaise{KO1}
+      \mauvaise{KO2}
+    \end{reponses}
+  \end{questionmult}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% #################################################################
+% C R E A T I O N  D E S  C O P I E S
+% #################################################################
+\exemplaire{1}{    	% nombre de sujet différent
+
+  %debut de l'en-tête des copies :    
+
+  \vspace*{.5cm}
+  \begin{minipage}{.4\linewidth}
+    \centering\large\bf Test
+  \end{minipage}
+  \champnom{\fbox{
+      \begin{minipage}{.5\linewidth}
+        Nom et prénom :
+
+        \vspace*{.5cm}\dotfill
+        \vspace*{1mm}
+      \end{minipage}
+    }}
+
+  \begin{flushleft}
+    \begin{center}
+      \Large{\textsc{QCM \ue{}}}\\
+      \normalsize
+    \end{center}
+  \end{flushleft}
+
+
+  % groupe à exporter
+  \cleargroup{2020}
+
+  \copygroup{theme1}{2020}
+  %\copygroup{theme2}{2020}
+  % etc.
+
+  %optional?% \melangegroupe{2020}
+  \restituegroupe{2020}
+}
+
+\end{document}
