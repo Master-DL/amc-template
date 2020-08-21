@@ -1,0 +1,11 @@
+--- a/Error.pm	2020-06-23 12:47:35.828889557 +0200
++++ b/Error.pm	2020-06-23 12:47:53.052921149 +0200
+@@ -361,7 +361,7 @@
+   elsif ($arg =~ /^-?[\d.]+\z/) { }                       # Leave numbers alone.
+   else {                                                  # Otherwise, string, so quote
+     $arg =~ s/'/\\'/g;                                    # Slashify '
+-    $arg =~ s/([[::cntrl::]])/ "\\".chr(ord($1)+ord('A'))/ge;
++    $arg =~ s/([[:cntrl:]])/ "\\".chr(ord($1)+ord('A'))/ge;
+     $arg = "'$arg'" }
+   return trim($arg); }
+ 
