@@ -15,7 +15,7 @@
 
 ## Utilisation
 
-* Copier/renommer le fichier `main.tex` (par exemple `ue.tex`) et y ajouter des questions
+* Copier/renommer le fichier [`main.tex`](./main.tex) (par exemple `ue.tex`), y ajouter des questions et mettre à jour la macro `\ue`.
 * En supposant que le nom du groupe de questions à exporter soit `2020` :
     * Vérifier que le fichier `ue.tex` contienne les commandes LaTeX adéquates (notamment `\restituegroupe{2020}`)
 	* Exécuter `amc2moodle -o ue_2020.xml -c 2020 -p ue.tex`
