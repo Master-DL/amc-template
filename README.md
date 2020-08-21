@@ -7,9 +7,9 @@
 * `sudo pip3 install --upgrade pip`
 * `latexml --VERSION`
 * Si cette commande déclenche l'erreur "Assuming NOT a POSIX class since there is no terminating ']' in regex […] at /usr/share/perl5/LaTeXML/Common/Error.pm line 364" (testé avec LaTeXML 0.8.1), faire :  
-    `sudo patch -Nbp1 /usr/share/perl5/LaTeXML/Common/Error.pm < .../Error.pm.patch`  
+    `sudo patch -Nbp1 /usr/share/perl5/LaTeXML/Common/Error.pm < .../`[`Error.pm.patch`](./Error.pm.patch)  
 	puis à nouveau `latexml --VERSION`
-* `git clone` <https://github.com/nennigb/amc2moodle>
+* `git clone` [`https://github.com/nennigb/amc2moodle`](https://github.com/nennigb/amc2moodle)
 * `cd amc2moodle`
 * `sudo pip3 install .`
 
@@ -21,4 +21,4 @@
 	* Exécuter `amc2moodle -o ue_2020.xml -c 2020 -p ue.tex`
 	* Ouvrir la banque de questions Moodle (`xdg-open https://moodle.univ-tlse3.fr/question/edit.php?courseid=$NumUE`)
 	* Supprimer les questions de la catégorie `2020` si besoin (en cas de réimportation pour mettre à jour les questions)
-	* Cliquer sur `Importer → Format XML Moodle`, cocher `Faire correspondre les notes : Note la plus proche si elle n'est pas lisée` et téléverser le fichier `ue_2020.xml`.
+	* Cliquer sur `Importer → Format XML Moodle`, cocher `Faire correspondre les notes : Note la plus proche si elle n'est pas listée` et téléverser le fichier `ue_2020.xml`.
