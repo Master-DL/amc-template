@@ -1,6 +1,6 @@
 # Template pour auto-multiple-choice et amc2moodle
 
-## Installation (testé sous GNU/Linux Debian 9)
+## [Installation](https://github.com/nennigb/amc2moodle#installation) (testé sous GNU/Linux Debian 9)
 
 * `sudo apt-get update`
 * `sudo apt-get install imagemagick latexml xmlindent python3-pip`
